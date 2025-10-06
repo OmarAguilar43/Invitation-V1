@@ -1,6 +1,7 @@
 import AudioToggle from "./components/AudioToggle";
 import EventsSection, { ReceptionIcon } from "./components/EventsSection";
 import Hero from "./components/Hero";
+import PhotoCarousel from "./components/photoCarrusel";
 import PhotoGrid from "./components/PhotoGrid";
 import RsvpSection from "./components/RsvpSection";
 import WordsSection from "./components/wordsSection";
@@ -20,7 +21,14 @@ export default function Page() {
         place="Bar Manotas • 6:00 PM"
         bgImage="/bg1.jpg"
       />
-      <PhotoGrid />
+      
+      <PhotoCarousel
+        images={[
+          { src: "/cum1.jpg", alt: "Jade 1" },
+          { src: "/cum2.jpg", alt: "Jade 2" },
+          { src: "/cum3.jpg", alt: "Jade 3" },
+        ]}
+      />
       
       <AudioToggle />
 
