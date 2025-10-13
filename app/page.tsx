@@ -3,6 +3,7 @@ import EventsSection, { ReceptionIcon } from "./components/EventsSection";
 import Hero from "./components/Hero";
 import PhotoCarousel from "./components/photoCarrusel";
 import PhotoGrid from "./components/PhotoGrid";
+import RsvpCard from "./components/RsvpSection";
 import RsvpSection from "./components/RsvpSection";
 import WordsSection from "./components/wordsSection";
 
@@ -24,10 +25,11 @@ export default function Page() {
       
       <PhotoCarousel
         images={[
-          { src: "/cum1.jpg", alt: "Jade 1" },
-          { src: "/cum2.jpg", alt: "Jade 2" },
-          { src: "/cum3.jpg", alt: "Jade 3" },
+          { src: '/cum1.jpg', alt: 'Jade 1' },
+          { src: '/cum2.jpg', alt: 'Jade 2' },
+          { src: '/cum3.jpg', alt: 'Jade 3' },
         ]}
+        aspect="9 / 16" // vertical; puedes usar '3 / 4' si prefieres
       />
       
       <AudioToggle />
@@ -52,12 +54,7 @@ export default function Page() {
         signature="— Jade"
 />
 
-      <RsvpSection
-  googleFormUrl="https://forms.gle/xxxxxxxx"
-  whatsappLink="https://wa.me/52XXXXXXXXXX?text=Hola,%20confirmo%20mi%20asistencia%20para%20Jade."
-  // docsTemplateUrl="https://docs.google.com/document/d/XXXX/edit?usp=sharing"
-  // note="Confirma antes del 30 de noviembre, por favor."
-/>
+      <RsvpCard/>
 
       <footer className="px-6 pb-10 text-center text-xs text-white/50">Con cariño • {new Date().getFullYear()}</footer>
     </>

@@ -2,38 +2,45 @@
 
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-const photos = [
-  '/cum1.jpg',
-  '/cum2.jpg',
-  '/cum3.jpg',
-];
+type Photo = { src: string; alt?: string };
 
-export default function App() {
+interface PhotoCarouselProps {
+  images: Photo[];
+  aspect?: string; // p.ej. '10/16', '3/4', '9/16'
+}
+
+export default function PhotoCarousel({ images, aspect = '10/16' }: PhotoCarouselProps) {
   return (
-    <div className="w-full mt-10 mb-10 max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg">
-      {/* Para fotos verticales, usa un contenedor con aspecto 9:16 */}
-      <div className="relative w-full aspect-[10/16] bg-black/60">
+    <div className="w-full min-h-[80vh] flex items-center justify-center">
+      {/* Contenedor centrado, 1 foto, vertical */}
+      <div
+        className="relative w-[90%] max-w-sm rounded-3xl overflow-hidden shadow-lg bg-black/60"
+        style={{ aspectRatio: aspect }} // evita usar aspect-[...] dinámico
+      >
         <Swiper
           slidesPerView={1}
-          centeredSlides={false}
-          spaceBetween={0}
-          grabCursor
-          pagination={{ clickable: true, dynamicBullets: true }}
+          centeredSlides
+          pagination={{ clickable: true }}
+          navigation
+          loop
           modules={[Pagination]}
-          className="mySwiper"
+          className="h-full"
         >
-          {photos.map((src, i) => (
-            <SwiperSlide key={i}>
-              {/* Opción A: cubrir (recorta un poco pero llena) */}
-              {/* <Image src={src} alt={`foto ${i + 1}`} fill priority className="object-cover" /> */}
-
-              {/* Opción B: contener (no recorta; puede dejar barras) */}
-              <Image src={src} alt={`foto ${i + 1}`} fill priority className="object-contain" />
+          {images.map((img, i) => (
+            <SwiperSlide key={i} className="flex items-center justify-center">
+              <Image
+                src={img.src}
+                alt={img.alt ?? `foto ${i + 1}`}
+                fill
+                className="object-contain"
+                priority={i === 0}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
