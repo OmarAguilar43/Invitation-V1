@@ -25,7 +25,7 @@ export default function Page() {
       
       <PhotoCarousel
         images={[
-          { src: '/cum1.jpg', alt: 'Jade 1' },
+          
           { src: '/cum2.jpg', alt: 'Jade 2' },
           { src: '/cum3.jpg', alt: 'Jade 3' },
         ]}

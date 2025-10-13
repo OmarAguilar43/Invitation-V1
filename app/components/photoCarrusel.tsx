@@ -30,6 +30,7 @@ export default function PhotoCarousel({ images, aspect = '10/16' }: PhotoCarouse
           navigation
           loop
           modules={[Pagination]}
+          autoplay
           className="h-full"
         >
           {images.map((img, i) => (
