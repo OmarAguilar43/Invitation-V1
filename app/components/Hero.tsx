@@ -23,7 +23,7 @@ export default function Hero({
   bgImage = "/bg-hero.jpg",
 }: Props) {
   return (
-    <section className="relative h-[85vh] w-full overflow-hidden">
+    <section className="relative h-[100vh] w-full overflow-hidden">
       {/* Fondo */}
       <Image
         src={bgImage}

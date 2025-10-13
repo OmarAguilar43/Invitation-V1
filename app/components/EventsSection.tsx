@@ -60,13 +60,13 @@ export default function EventsSection({ bgImage="/bg2.jpg", items }: Props) {
 
                 <div className="my-5 h-px bg-white/15" />
 
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col items-center gap-2">
+                <div className="flex justify-center gap-20">
+                  <div className="flex flex-col items-center gap-1">
                     {ev.leftIcon ?? <ChapelIcon />}
                     <p className="text-white/80 text-sm">{ev.subtitle}</p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2">
+                  <div className="flex flex-col items-center gap-1">
                     <div className="flex items-center justify-center w-16 h-16 rounded-full border border-white/70">
                       <Clock className="w-7 h-7 text-white" />
                     </div>
