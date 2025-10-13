@@ -17,7 +17,7 @@ interface PhotoCarouselProps {
 
 export default function PhotoCarousel({ images, aspect = '10/16' }: PhotoCarouselProps) {
   return (
-    <div className="w-full min-h-[80vh] flex items-center justify-center">
+    <div className="w-full min-h-[80vh] flex items-center justify-center mt-7 mb-7">
       {/* Contenedor centrado, 1 foto, vertical */}
       <div
         className="relative w-[90%] max-w-sm rounded-3xl overflow-hidden shadow-lg bg-black/60"
